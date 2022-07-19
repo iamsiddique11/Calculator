@@ -1,0 +1,92 @@
+<html>
+<head>
+	<script>
+		//function that display value
+		function disp(val)
+		{
+			document.getElementById("result").value+=val
+		}
+		
+		//function that evaluates the digit and return result
+		function solve()
+		{
+			let x = document.getElementById("result").value
+			let y = eval(x)
+			document.getElementById("result").value = y
+		}
+		
+		//function that clear the display
+		function clr()
+		{
+			document.getElementById("result").value = ""
+		}
+	</script>
+	<style>
+		.title{
+		margin-bottom: 10px;
+		margin-left: 103px;
+		text-align:center;
+		width: 200px;
+		color:orange;
+		border: solid black 2px;
+		}
+
+		input[type="button"]
+		{
+		background-color:orange;
+		color: black;
+		border: solid green 2px;
+		width:100%
+		}
+
+		input[type="text"]
+		{
+		background-color:white;
+		border: solid green 2px;
+		width:100%
+		}
+		.table{
+		margin-left: 100px;
+		text-align:center;
+		}
+	</style>
+</head>
+<!-- create table -->
+<body >
+	<div class = title  >Calculator</div>
+	<table class=table border="1">
+		<tr>
+			<td colspan="3"><input type="text" id="result"/></td>
+			<!-- clr() function will call clr to clear all value -->
+			<td><input type="button" value="c" onclick="clr()"/> </td>
+		</tr>
+		<tr>
+			<!-- create button and assign value to each button -->
+			<!-- disp("1") will call function disp to dispplay value -->
+			<td><input type="button" value="1" onclick="disp('1')"/> </td>
+			<td><input type="button" value="2" onclick="disp('2')"/> </td>
+			<td><input type="button" value="3" onclick="disp('3')"/> </td>
+			<td><input type="button" value="/" onclick="disp('/')"/> </td>
+		</tr>
+		<tr>
+			<td><input type="button" value="4" onclick="disp('4')"/> </td>
+			<td><input type="button" value="5" onclick="disp('5')"/> </td>
+			<td><input type="button" value="6" onclick="disp('6')"/> </td>
+			<td><input type="button" value="-" onclick="disp('-')"/> </td>
+		</tr>
+		<tr>
+			<td><input type="button" value="7" onclick="disp('7')"/> </td>
+			<td><input type="button" value="8" onclick="disp('8')"/> </td>
+			<td><input type="button" value="9" onclick="disp('9')"/> </td>
+			<td><input type="button" value="+" onclick="disp('+')"/> </td>
+		</tr>
+		<tr>
+			<td><input type="button" value="." onclick="disp('.')"/> </td>
+			<td><input type="button" value="0" onclick="disp('0')"/> </td>
+			<!-- solve function call function solve to evaluate value -->
+			<td><input type="button" value="=" onclick="solve()"/> </td>
+			<td><input type="button" value="*" onclick="disp('*')"/> </td>
+		</tr>
+	</table>
+</body>
+</html>
